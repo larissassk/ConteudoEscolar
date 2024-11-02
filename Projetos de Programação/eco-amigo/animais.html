@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS media query em um elemento de link para dispositivos com altura máxima de 800px -->
+    <link rel="stylesheet" media="(max-width: 800px)" href="altura-max800.css" />
+    <title>Animais</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index2.css">
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+    <style>
+      header {
+        background-color: rgb(6, 60, 6); 
+      }
+      .navbar {
+        background-color: rgb(6, 60, 6) !important; 
+      }
+      .dropdown-menu{
+      background-color: rgb(6, 60, 6); 
+      }
+      .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+      clear: both;
+      font-weight: 400;
+      color: white;
+    
+      text-align: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+      border-radius: var(--bs-dropdown-item-border-radius,0);
+  }
+      </style> 
+   <header data-bs-theme="dark">
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <img src="imagens_/todas-logo/logo.circulo.png.png" alt="some text" width=40 height=40>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="info.html" data-bs-toggle="dropdown">Informações</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="mudclimáticas.html">Mudanças Climáticas</a></li>
+                <li><a class="dropdown-item" href="susten.html">Sustentabilidade</a></li>
+                <li><a class="dropdown-item active" href="animais.html"> Animais</a></li>
+                <li><a class="dropdown-item" href="florestas.html"> Florestas</a></li>
+              </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="indigenas.html" data-bs-toggle="dropdown">Indígenas</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="linguas.html"> Línguas Indígenas</a></li>
+                <li><a class="dropdown-item" href="espiritualidade.html">Espiritualidade</a></li>
+                <li><a class="dropdown-item" href="Importancia.html">Importância</a></li>
+                <li><a class="dropdown-item" href="arte.html">Arte</a></li>
+                <li><a class="dropdown-item" href="comidas.html">Comidas</a></li>
+              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="empreECO.html">Empresas ECO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="denuncia.html">Denuncia</a>
+
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+          </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main>
+
+ 
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <!-- START THE FEATURETTES -->
+
+
+    <div class="dropdown">
+
+      
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Pesq. científicas
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#causa" class="dropdown-item" type="button">O impacto dos testes em animais</a></li>
+          <li><a href="#mais usados" class="dropdown-item" type="button">Animais usados em pesquisa científicas</a></li>
+        </ul>
+     
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Inteligência Animal
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Como funciona a inteligência animal?</a></li>
+          <li><button class="dropdown-item" type="button">Qual a diferença entre instinto animal e inteligência animal?</a></li>
+          <li><button class="dropdown-item" type="button">Variações entre espécies</a></li>
+        </ul>
+
+        
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Extinção
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#cextinção" class="dropdown-item" type="button">Causas da extinção</a></li>
+        <li><a href="#Impactoextinção" class="dropdown-item" type="button">Impacto da extinção nos ecossistemas</a>z</li>
+      </ul>
+
+  
+  
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Biodiversidade
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#Estratégias de conservação" class="dropdown-item" type="button">Estratégias de conservação baseadas na ecologia animal:</a></li>
+        <li><a href="#Papeldasespécies" class="dropdown-item" type="button">Papel das espécies-chave na biodiversidade</a></li>
+      </ul>
+    </div>
+
+  
+
+    
+
+    <div id="Estratégias de conservação" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1"> Estratégias de conservação baseadas na ecologia animal: <span class="text-body-secondary"> </span></h2>
+        <p class="lead"> As estratégias de conservação baseadas na ecologia animal visam proteger e preservar as espécies e os ecossistemas em que vivem, levando em consideração as interações ecológicas e os requisitos específicos de cada espécie. Algumas das estratégias comumente utilizadas incluem: <br>
+          Preservação de habitats: Consiste em proteger e restaurar os habitats naturais das espécies ameaçadas, como áreas protegidas e práticas sustentáveis de manejo de terras e recursos. <br>
+
+          Corredores ecológicos: Estabelecimento de conexões entre habitats fragmentados para permitir a movimentação das espécies, mantendo a diversidade genética e promovendo a migração sazonal. <br>
+          
+          Monitoramento e manejo de populações: Coleta de dados sobre populações ameaçadas e implementação de estratégias de manejo adaptativo, incluindo regulamentação de caça, controle de espécies invasoras e monitoramento de doenças. <br>
+          
+          Restauração de ecossistemas: Reintrodução de espécies ameaçadas e restauração de ecossistemas degradados por meio de práticas de reflorestamento, recuperação de áreas úmidas e gestão de recursos hídricos. <br>
+          
+          Educação e sensibilização pública: Conscientização da comunidade sobre a importância da conservação, por meio de programas educacionais, participação da comunidade em atividades de conservação e promoção de práticas de uso sustentável dos recursos naturais.</p>
+       
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.barrameda.com.ar/wp-content/uploads/2019/11/individuos1.jpg" width="500" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="instinto-inteligência" class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"> Qual a diferença entre instinto animal e inteligência animal?<span class="text-body-secondary"></span></h2>
+        <p class="lead">
+          O instinto animal se refere a comportamentos inatos e automáticos, enquanto a inteligência animal envolve capacidades de aprendizado, adaptação, resolução de problemas e interação flexível com o ambiente. O instinto é determinado geneticamente e não é influenciado pelo ambiente, enquanto a inteligência pode ser moldada por experiências individuais e varia entre as espécies.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://static.wixstatic.com/media/d61ae6_26a0097251854e2dbf77aa346e9a5657~mv2.png/v1/fill/w_709,h_496,al_c,lg_1,q_85,enc_auto/d61ae6_26a0097251854e2dbf77aa346e9a5657~mv2.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="vespécies" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Variações entre espécies:<span class="text-body-secondary"></span></h2>
+        <p class="lead"> A inteligência animal varia consideravelmente entre as espécies, com algumas demonstrando habilidades notáveis, enquanto outras apresentam capacidades mais limitadas. Isso pode ser observado em diferenças na capacidade cerebral relativa, comportamento social complexo, adaptabilidade ao ambiente ecológico, bem como em estratégias de sobrevivência específicas. Por exemplo, golfinhos, elefantes e primatas exibem habilidades cognitivas avançadas devido à sua complexa vida social, enquanto espécies que enfrentam desafios ambientais complexos, como encontrar e processar alimentos, também demonstram inteligência adaptativa, como visto em certas aves e mamíferos.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://mega.ibxk.com.br/2014/05/19/19082941672002.jpg?ims=610x" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="cextinção" class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1"> Causas da extinção<span class="text-body-secondary"></span></h2>
+            <p class="lead"> Causas comuns de extinção de espécies incluem perda de habitat devido a atividades humanas, mudanças climáticas, exploração excessiva de recursos, invasão de espécies estrangeiras, poluição e propagação de doenças. Estas ameaças afetam diretamente a sobrevivência de diferentes formas de vida, reduzindo suas populações e levando à extinção.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://canalcienciascriminais.com.br/wp-content/uploads/2016/06/tucano212.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div id="Impactoextinção" class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Impacto da extinção nos ecossistemas:<span class="text-body-secondary"></span></h2>
+            <p class="lead"> 
+              A extinção de espécies pode causar perda de biodiversidade, interrupção das cadeias alimentares, alterações nas interações ecológicas, redução da resiliência e estabilidade dos ecossistemas, bem como impactos econômicos e sociais em comunidades dependentes de recursos naturais. A preservação da biodiversidade é crucial para manter a integridade e o equilíbrio dos ecossistemas, garantindo sua sustentabilidade e a sobrevivência das populações humanas.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://s.rfi.fr/media/display/6fda9526-111b-11ea-ac7d-005056a99247/w:980/p:16x9/snow_leopard_looking_back_24038917200.webp" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+      <div class="row featurette">
+        <div id="Papeldasespécies" class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1"> Papel das espécies-chave na biodiversidade<span class="text-body-secondary"></span></h2>
+            <p class="lead"> 
+              Espécies-chave são aquelas que têm um papel importante na natureza, ajudando a equilibrar a população de outras espécies e mantendo os ambientes saudáveis. Elas regulam o crescimento de outras plantas e animais, mantêm o equilíbrio do ecossistema e ajudam a sustentar a diversidade de vida. Proteger essas espécies é essencial para manter a saúde e a estabilidade da natureza.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://d2v9ipibika81v.cloudfront.net/uploads/sites/32/2017/03/ap_17026656350812-1140x684.jpeg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+      
+
+      <div id="pesquisacien" class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Animais usados em pesquisa científicas<span class="text-body-secondary"></span></h2>
+            <p class="lead"> A educação ambiental, a conscientização pública e a promoção de práticas de turismo responsável são fundamentais para desenvolver uma compreensão mais profunda sobre os impactos negativos do tráfico de animais e para promover a proteção e conservação da vida selvagem.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://4.bp.blogspot.com/-a8cH6whV8fg/VnBJV38OjbI/AAAAAAAAIjI/4wKEa65Fth0/s1600/experimentos-animais-testes-monovin-glicopan-testeievoce-1.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+      
+
+      <div id="8" class="row featurette">
+        <div id="habitats" class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Adicionar novo artigo<span class="text-body-secondary"> Preservação de Ecossistemas e Áreas Protegidas:</span></h2>
+            <p class="lead"> Além de combater o tráfico de animais, é crucial proteger e preservar os habitats naturais das espécies selvagens, promovendo a restauração e conservação de ecossistemas vitais para o equilíbrio ecológico e a sobrevivência da vida selvagem.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://s4.static.brasilescola.uol.com.br/be/2020/12/corredores-ecologicos.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+    
+    <hr class="featurette-divider">
+    <div id="pesquisa" class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Pesquisa cientifica de animais:<span class="text-body-secondary"> </span></h2>
+        <p class="lead">Os testes com animais são experimentos realizados com a utilização de animais, chamados cobaias, a fim de produzir conhecimento científico aos seres humanos, como a elaboração de novas drogas, novos métodos cirúrgicos, vacinas, terapia genética etc.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://revistapesquisa.fapesp.br/wp-content/uploads/2023/06/RPF-testes-animais-2023-06-site-00-1140.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+
+    <div id="causa" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Quantos animais morrem em média por ano por causa de testes? <span class="text-body-secondary"> </span></h2>
+        <p class="lead"> 
+          Mais de 100 milhões de animais mortos no mundo. Esse é o saldo anual de experimentos científicos com animais, seja em testes laboratoriais para indústrias ou em universidades, que incluem a prática da vivissecção, a qual consiste na experiência com o animal vivo e, na quase totalidades das vezes, sem anestesia.</p>
+       
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.cartacapital.com.br/wp-content/uploads/2023/03/animais_testes-1.jpg" width="500" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+   
+    <div id="mais usados" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Quais são os animais mais usados em pesquisas científicas? <span class="text-body-secondary"> </span></h2>
+        <p class="lead"> Certos animais são frequentemente utilizados em pesquisas científicas devido a características específicas que os tornam modelos valiosos para o estudo de uma variedade de condições médicas e biológicas. Ratos e camundongos são amplamente usados devido à sua fácil manipulação genética e semelhança com os humanos em termos de fisiologia. Peixes-zebra são escolhas populares para estudos de biologia do desenvolvimento devido à sua capacidade de reprodução rápida e embriões transparentes. Cobaias, como porquinhos-da-índia, são comumente utilizadas em pesquisas relacionadas a doenças humanas, alergias e imunologia, enquanto hamsters são valorizados em estudos de virologia e imunologia devido à sua resistência a certas doenças virais.</p>
+       
+      </div>
+      <div class="col-md-5">
+        <img src="https://revistapesquisa.fapesp.br/wp-content/uploads/2021/04/050-053_experimentacao-animal_302-0-1140.jpg" width="500" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+   
+    <div id="biodiversidade" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Biodiversidade Animal: <span class="text-body-secondary"></span></h2>
+        <p class="lead"> A biodiversidade animal refere-se à variedade de espécies animais em ecossistemas terrestres e aquáticos. Sua importância reside na estabilidade dos ecossistemas, no funcionamento das cadeias alimentares, na prestação de serviços ecossistêmicos essenciais, nas contribuições para a ciência e medicina, bem como em seu valor cultural e recreativo. A preservação da biodiversidade animal é fundamental para a saúde dos ecossistemas e o equilíbrio entre a natureza e a sociedade humana.</p>
+       
+      </div>
+      <div class="col-md-5">
+        <img src="https://ciclovivo.com.br/wp-content/uploads/2016/11/elefante_wwf.jpg" width="500" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+   
+    <div id="Contrabando" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Sob a Sombra do Contrabando:  <span class="text-body-secondary"> O Lado Sombrio do Tráfico de Animais Selvagens</span></h2>
+        <p class="lead"> O tráfico de animais selvagens é uma indústria clandestina global que ameaça a biodiversidade e a estabilidade dos ecossistemas em todo o mundo. Impulsionado pela demanda lucrativa por espécimes vivos, partes do corpo e produtos derivados, esse comércio ilegal inflige danos irreparáveis às populações selvagens, aumentando o risco de extinção de espécies e comprometendo a integridade dos habitats naturais. A conscientização pública, a implementação de leis mais rigorosas e a proteção de habitats naturais são cruciais para combater esse comércio clandestino e preservar a rica diversidade da vida selvagem para as gerações futuras.</p>
+       
+      </div>
+      <div class="col-md-5">
+        <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_arara-resgatada-do-cativeiro-de-traficantes-de-animais-e-tratada-em-gaiola-do-centro-de-triagem-de-animais-silvestres4.jpg?quality=70&strip=info&w=960" width="500" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="Extensão" class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"> Extensão do Problema:<span class="text-body-secondary"> Uma Indústria Global Ilícita:</span></h2>
+        <p class="lead"> O tráfico de animais selvagens é uma atividade criminosa que envolve a captura, o comércio e a exploração ilegal de espécies silvestres em todo o mundo, causando danos irreparáveis aos ecossistemas e à biodiversidade.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://mid.curitiba.pr.gov.br/2022/destaque/00346437.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="impacto" class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Impacto na Biodiversidade: <span class="text-body-secondary"> Ameaça à Vida Selvagem e Ecossistemas:</span></h2>
+        <p class="lead"> 
+          O comércio ilegal de animais contribui para a diminuição das populações de espécies selvagens, perturba o equilíbrio ecológico e ameaça a estabilidade dos ecossistemas, resultando em perdas irreversíveis para a biodiversidade global.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.noticiasustentavel.com.br/wp-content/uploads/2020/09/estudowwf_onca.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="RotaseMetodos" class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1"> Rotas e Métodos de Tráfico:<span class="text-body-secondary"> Redes Complexas e Estratégias Enganosas:</span></h2>
+            <p class="lead"> O tráfico de animais utiliza rotas clandestinas, métodos de contrabando criativos e tecnologias modernas para transportar animais silvestres, muitas vezes sujeitando-os a condições cruéis e desumanas que resultam em sofrimento extremo e mortalidade.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://canalcienciascriminais.com.br/wp-content/uploads/2016/06/tucano212.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div id="Demandas" class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Motivações e Demandas do Mercado:<span class="text-body-secondary"> Lucro e Interesses Econômicos Desenfreados:</span></h2>
+            <p class="lead"> A demanda por animais selvagens vivos, peles exóticas, partes do corpo e produtos derivados impulsiona a exploração desenfreada da vida selvagem, alimentando um mercado clandestino lucrativo e sem escrúpulos.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://s.rfi.fr/media/display/6fda9526-111b-11ea-ac7d-005056a99247/w:980/p:16x9/snow_leopard_looking_back_24038917200.webp" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+
+      <div id="Consequências " class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1"> Consequências para as Espécies Ameaçadas:<span class="text-body-secondary"> Risco de Extinção e Perda Irreparável:</span></h2>
+            <p class="lead"> O tráfico de animais aumenta a vulnerabilidade de espécies já ameaçadas de extinção, diminuindo as chances de sobrevivência e recuperação, e comprometendo os esforços de conservação em todo o mundo.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://www.gov.br/icmbio/pt-br/assuntos/noticias/ultimas-noticias/lista-oficial-das-especies-ameacadas-de-extincao-e-divulgada/green_turtle.jpg/@@images/058a0c5a-2ee9-4e1c-a243-7ab5b5875bc8.jpeg" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      
+      <div class="row featurette">
+        <div id="Combate" class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">  Esforços de Combate e Legislação:<span class="text-body-secondary"> Iniciativas Globais e Necessidade de Ação Coletiva:</span></h2>
+            <p class="lead"> A implementação de leis mais rigorosas, o fortalecimento da aplicação da lei, a conscientização pública e a colaboração internacional são essenciais para combater efetivamente o tráfico de animais e proteger a fauna silvestre de ameaças contínuas.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://www.bichovivoconsultoria.com.br/uploads/images/2020/05/por-que-promover-a-conservacao-de-animais-selvagens.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+      
+
+      <div id="Educação" class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1"> Papel da Educação e Sensibilização:<span class="text-body-secondary"> Promovendo a Consciência e a Responsabilidade:</span></h2>
+            <p class="lead"> A educação ambiental, a conscientização pública e a promoção de práticas de turismo responsável são fundamentais para desenvolver uma compreensão mais profunda sobre os impactos negativos do tráfico de animais e para promover a proteção e conservação da vida selvagem.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://medeage.com.br/images/dia-nacional-educacao-ambiental-scaled.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+      
+
+      <div id="8" class="row featurette">
+        <div id="habitats" class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Proteção de Habitats Naturais:<span class="text-body-secondary"> Preservação de Ecossistemas e Áreas Protegidas:</span></h2>
+            <p class="lead"> Além de combater o tráfico de animais, é crucial proteger e preservar os habitats naturais das espécies selvagens, promovendo a restauração e conservação de ecossistemas vitais para o equilíbrio ecológico e a sobrevivência da vida selvagem.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://s4.static.brasilescola.uol.com.br/be/2020/12/corredores-ecologicos.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  </html>
