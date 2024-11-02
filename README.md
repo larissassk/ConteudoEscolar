@@ -1,4 +1,4 @@
-# Trabalhos Escolares 2024
+# Conteudo Escolar
 
 Este repositório contém atividades, algoritmos, projetos e exercícios de matemática desenvolvidos ao longo do ano escolar de 2024. Este repositório é uma representação do que foi aprendido na **Escola Social Marista Ir Acácio**, nas aulas de **Programação Web** com o professor **Leonardo Rocha**.
 
