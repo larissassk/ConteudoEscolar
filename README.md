@@ -1,16 +1,14 @@
-# 📚 Trabalhos Escolares 2024
+# Trabalhos Escolares 2024
 
-Bem-vindo ao repositório de **Trabalhos Escolares 2024**! Este espaço contém atividades, algoritmos, projetos e exercícios de matemática desenvolvidos ao longo do ano escolar de 2024. Ele é uma representação do que foi aprendido na **Escola Social Marista Ir Acácio**, nas aulas de **Programação Web** com o professor **Leonardo Rocha**.
+Este repositório contém atividades, algoritmos, projetos e exercícios de matemática desenvolvidos ao longo do ano escolar de 2024. Este repositório é uma representação do que foi aprendido na Escola Social Marista Ir Acácio, nas aulas de Programação Web com o professor Leonardo Rocha.
 
----
+## Projeto Integrador: Roubbie
 
-## 🚀 Projeto Integrador: Roubbie
+Além das atividades mencionadas, este ano também inclui o desenvolvimento do **Roubbie**, um projeto integrador que serve como Trabalho de Conclusão de Curso (TCC). O Roubbie é um aplicativo que auxilia os usuários a descobrirem hobbies e a equilibrar sua rotina entre trabalho e lazer. Este projeto une conhecimentos de **programação web**, **programação mobile**, **engenharia de software** e **design**, permitindo uma abordagem multidisciplinar para o desenvolvimento de soluções tecnológicas.
 
-Além das atividades mencionadas, este ano também inclui o desenvolvimento do **Roubbie**, um projeto integrador que serve como **Trabalho de Conclusão de Curso (TCC)**. O Roubbie é um aplicativo que auxilia os usuários a descobrirem hobbies e a equilibrar sua rotina entre trabalho e lazer. Este projeto une conhecimentos de **programação web**, **programação mobile**, **engenharia de software** e **design**, permitindo uma abordagem multidisciplinar para o desenvolvimento de soluções tecnológicas.
+Você pode acompanhar o desenvolvimento do Roubbie no repositório dedicado: [Roubbie - Repositório GitHub](https://github.com/emillycaaroline/roubbie).
 
----
-
-## 📂 Estrutura
+## Estrutura
 
 Os arquivos estão organizados em cinco pastas principais, conforme abaixo:
 
@@ -18,11 +16,8 @@ Os arquivos estão organizados em cinco pastas principais, conforme abaixo:
 - **ATD**: Atividades Dirigidas (ATD) fornecidas pelos professores para desenvolvimento de habilidades.
 - **Matemática**: Projetos e exercícios práticos de matemática e cálculo.
 - **Projetos**: Projetos diversos, abrangendo temas de programação, web e e-commerce.
-- **Roubbie**: Pasta dedicada ao projeto integrador Roubbie, contendo todos os arquivos e documentação relacionados ao desenvolvimento do aplicativo.
 
----
-
-## 📑 Conteúdo
+## Conteúdo
 
 ### Algoritmos
 - **fatorial**: Cálculo de fatorial de um número.
@@ -41,14 +36,9 @@ Os arquivos estão organizados em cinco pastas principais, conforme abaixo:
 - **cadastro-login**: Sistema de cadastro e login com validação.
 - **sistema-de-compras**: Sistema de gerenciamento de compras.
 - **eco-amigo**: Projeto voltado para conscientização ambiental.
+- **Cadlog System**: Sistema de cadastro e login de usuários, possui funcionalidades de gerenciamento de usuários e sessões, além de um banco de dados MySQL para armazenamento das informações.
 
-### Roubbie
-- **documentação**: Instruções e informações sobre o funcionamento do aplicativo.
-- **códigos**: Código-fonte do aplicativo Roubbie.
-
----
-
-## ✍️ Autor
+## Autor
 
 **Larissa Santos**  
 Este repositório é quase tudo o que foi aprendido no ano de 2024 na Escola Social Marista Ir Acácio, nas aulas de Programação Web com o professor Leonardo Rocha.
